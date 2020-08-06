@@ -1,0 +1,44 @@
+@import "./configure";
+
+.scroll-content {
+  .project-content-wrapper {
+    transition: transform 1s ease, opacity 1s ease, visibility 1s ease;
+    @include fullSizeContainer(relative);
+    height: 100%;
+    .router-outter {
+      bottom: 20%;
+      left: 15%;
+    }
+    .text-slider {
+      top: 20%;
+      left: 70%;
+    }
+    .project-logo {
+      background-image: url(../assets/images/project.svg);
+      background-color: transparent;
+      background-size: cover;
+      width: 600px;
+      height: 300px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .scroll-content {
+    .project-content-wrapper {
+      .text-slider {
+        max-width: 65vw;
+        left: 65%;
+        .text-slider-inner {
+          div {
+            font-size: 1.4vw;
+          }
+        }
+      }
+    }
+  }
+}

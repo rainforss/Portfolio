@@ -1,0 +1,41 @@
+@import "./configure";
+
+.router-outter {
+  @include fullSizeContainer(absolute);
+  width: 10vw;
+  height: 8vh;
+
+  overflow: hidden;
+  .router-inner {
+    @include fullSizeContainer(relative);
+    .link-wrapper {
+      @include fullSizeContainer(absolute);
+      @include flexCenter(row);
+
+      a {
+        @include linkReset;
+        font-size: 2vw;
+        display: block;
+      }
+    }
+  }
+
+  .underline-outter {
+    bottom: 0;
+    .underline-inner {
+      .front {
+        transform: translate(0, 0);
+      }
+    }
+  }
+}
+
+.router-outter:hover {
+  .front {
+    animation-name: slideOutRight, slideInLeft;
+    animation-duration: 0.3s, 0.3s;
+    animation-timing-function: ease, ease;
+    animation-delay: 0s, 0.3s;
+    animation-iteration-count: 1, 1;
+  }
+}

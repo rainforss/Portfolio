@@ -1,0 +1,23 @@
+@import "./configure";
+
+.control-button {
+  @include fullSizeContainer(absolute);
+  color: $text-color;
+  .button-inner {
+    @include fullSizeContainer(relative);
+    @include flexCenter(row);
+    .underline-outter {
+      bottom: 0;
+    }
+  }
+}
+
+.control-button:hover {
+  .front {
+    animation-name: slideOutRight, slideInLeft;
+    animation-duration: 0.3s, 0.3s;
+    animation-timing-function: ease, ease;
+    animation-delay: 0s, 0.3s;
+    animation-iteration-count: 1, 1;
+  }
+}

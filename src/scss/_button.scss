@@ -1,0 +1,55 @@
+@import "./configure";
+
+@mixin textTransition {
+  transition: transform 0.3s ease-in-out;
+}
+
+.button-outter {
+  @include fullSizeContainer(absolute);
+  bottom: 5%;
+  left: 50%;
+  height: 50px;
+  width: 200px;
+  overflow: hidden;
+  z-index: 99;
+  cursor: pointer;
+  .button-inner {
+    @include fullSizeContainer(relative);
+    .button-txt {
+      @include fullSizeContainer(absolute);
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.6);
+      .scroll {
+        display: flex;
+        @include fullSizeContainer(absolute);
+        align-items: center;
+        @include textTransition();
+      }
+      .back {
+        @include fullSizeContainer(absolute);
+        @include textTransition();
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.button-outter:hover {
+  .front {
+    animation-name: dropOut, dropIn;
+    animation-duration: 0.3s, 0.3s;
+    animation-delay: 0s, 0.3s;
+    animation-timing-function: ease, ease;
+    animation-iteration-count: 1, 1;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .button-outter {
+    display: none;
+  }
+}

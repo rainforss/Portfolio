@@ -1,0 +1,39 @@
+@import "./scss/configure";
+@import "./scss/responsiveUnderline";
+@import "./scss/button";
+@import "./scss/meter";
+@import "./scss/pagination";
+@import "./scss/aboutCover";
+@import "./scss/animation";
+@import "./scss/routerLink";
+@import "./scss/linkUnderline.scss";
+@import "./scss/projectCover";
+@import "./scss/blogCover";
+@import "./scss/contactCover";
+@import "./scss/textSlider";
+@import "./scss/controlButton";
+@import "./scss/navMenu";
+@import "./scss/header";
+@import url("https://fonts.googleapis.com/css2?family=Rowdies&family=Saira+Semi+Condensed&display=swap");
+
+html {
+  font-size: 16px;
+  height: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  #root {
+    height: 100%;
+  }
+}
+
+body * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Saira Semi Condensed", sans-serif;
+}

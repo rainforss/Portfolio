@@ -1,0 +1,29 @@
+@import "./configure";
+
+.underline-outter {
+  @include fullSizeContainer(absolute);
+  height: 3px;
+  overflow: hidden;
+  .underline-inner {
+    @include fullSizeContainer(relative);
+    .front {
+      @include fullSizeContainer(absolute);
+      z-index: 2;
+      background-color: rgba(255, 255, 255, 0.6);
+      transform: translate(0, 0);
+    }
+
+    .animated {
+      animation-name: slideOutRight, slideInLeft;
+      animation-duration: 0.5s, 3.5s;
+      animation-timing-function: ease, ease;
+      animation-delay: 0s, 0.5s;
+      animation-iteration-count: 1, 1;
+    }
+    .back {
+      @include fullSizeContainer(absolute);
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+}

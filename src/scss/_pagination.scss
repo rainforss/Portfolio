@@ -1,0 +1,66 @@
+@import "./configure";
+
+.pagination-outter {
+  @include fullSizeContainer(absolute);
+  height: 100px;
+  width: 50px;
+  top: 50%;
+  right: 50px;
+  color: white;
+  font-size: 20px;
+  transform: translate(200%, -50%);
+
+  z-index: 99;
+
+  .pagination-inner {
+    @include fullSizeContainer(relative);
+    .page-outter {
+      height: 50%;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      .pages {
+        position: absolute;
+        top: -100%;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transform: translate(0, 0%);
+        transition: transform 1s, opacity 1s, top 1s;
+        div {
+          height: 100%;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      .active {
+        top: 100%;
+        transform: translate(0, -100%);
+        opacity: 1;
+        transition: transform 1s, opacity 1s;
+      }
+    }
+    .total-outter {
+      height: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .meter-outter {
+      top: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .pagination-outter {
+    display: none;
+  }
+}

@@ -1,0 +1,42 @@
+@import "./configure";
+
+.contact-content-wrapper {
+  transition: transform 1s ease, opacity 1s ease, visibility 1s ease;
+  @include fullSizeContainer(relative);
+  height: 100%;
+  .router-outter {
+    top: 20%;
+    right: 15%;
+  }
+  .text-slider {
+    bottom: 20%;
+    left: 15%;
+  }
+
+  .contact-logo {
+    background-image: url(../assets/images/contact.svg);
+    background-color: transparent;
+    background-size: contain;
+    width: 600px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .scroll-content {
+    .contact-content-wrapper {
+      .text-slider {
+        max-width: 65vw;
+        .text-slider-inner {
+          div {
+            font-size: 1.4vw;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@import "./configure";
+
+.about-content-wrapper {
+  transition: transform 1s ease, opacity 1s ease, visibility 1s ease;
+  @include fullSizeContainer(relative);
+  height: 100%;
+
+  .subtitle-outter {
+    @include fullSizeContainer(absolute);
+    width: 50vw;
+    height: fit-content;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    .subtitle-inner {
+      @include fullSizeContainer(relative);
+      @include flexCenter(column);
+      .text-wrapper {
+        @include flexCenter(row);
+        width: 100%;
+        height: 50%;
+        overflow: hidden;
+        .text {
+          width: 100%;
+          height: 100%;
+          font-size: 4.5vw;
+          color: white;
+          text-align: start;
+          transition: transform 0.5s;
+        }
+      }
+    }
+  }
+
+  .router-outter {
+    top: 20%;
+    left: 18vw;
+  }
+
+  .about-logo {
+    position: absolute;
+    top: 10%;
+    left: 10vw;
+    background-image: url(../assets/images/speed.svg);
+    background-color: rgba(221, 105, 63, 0.1);
+    background-size: cover;
+    width: 25vh;
+    height: 25vh;
+    z-index: -1;
+    border-radius: 100%;
+  }
+}

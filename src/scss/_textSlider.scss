@@ -1,0 +1,77 @@
+@import "./configure";
+@import "./animation";
+
+.text-slider {
+  @include fullSizeContainer(absolute);
+  @include flexCenter(row);
+
+  min-width: 10vw;
+  max-width: 30vw;
+  height: 5vh;
+  color: $text-color;
+
+  .underline-outter {
+    width: 15px;
+    position: relative;
+    margin: 0 10px;
+    overflow: hidden;
+  }
+
+  .text-slider-inner {
+    @include flexCenter(row);
+    justify-content: flex-start;
+    width: 90%;
+    height: 100%;
+    margin: 0 10px;
+    .text-head {
+      margin: 0 10px;
+      font-weight: 300;
+      font-size: 1vw;
+    }
+    .text-body {
+      font-weight: 100;
+      width: 70%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      font-size: 1vw;
+      .txt {
+        @include fullSizeContainer(absolute);
+        @include flexCenter(row);
+        justify-content: flex-start;
+        top: -100%;
+        transform: translate(0, 0);
+        opacity: 0;
+        transition: transform 1s, opacity 0.5s, top 1s;
+        span {
+          opacity: 0.5;
+        }
+        a {
+          opacity: 0.5;
+          text-decoration: none;
+          color: $text-color;
+        }
+        a:hover {
+          opacity: 1;
+        }
+      }
+      .active {
+        top: 100%;
+        transform: translate(0, -100%);
+        opacity: 1;
+        transition: transform 1s, opacity 0.5s;
+      }
+    }
+  }
+}
+
+.text-slider {
+  .ape {
+    animation-name: slideOutRight, slideInLeft;
+    animation-fill-mode: forwards, forwards;
+    animation-duration: 0.5s, 3.5s;
+    animation-timing-function: ease, ease;
+    animation-delay: 3.5s, 4s;
+    animation-iteration-count: 1, 1;
+  }
+}
